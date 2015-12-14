@@ -79,6 +79,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ProjectEuler\p1.cpp" />
+    <ClCompile Include="..\ProjectEuler\p2_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ProjectEuler\p2_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

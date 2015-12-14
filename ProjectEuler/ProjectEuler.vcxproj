@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="p2_main.cpp" />
+    <ClCompile Include="p3_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="p2_header.h" />
+    <ClInclude Include="p3_header.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4B35BC40-000A-4C80-9DA7-187FFAB28245}</ProjectGuid>
