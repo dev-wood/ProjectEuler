@@ -2,10 +2,13 @@
 
 int main()
 {
-	int testvalue = 10;
+	int testvalue;
 	std::cout << "program start" << std::endl;
+	std::cout << "Put number to find largest prime factor: ";
+	std::cin >> testvalue;
+	
+	std::cout << findLargestPrimeFactor(testvalue) << std::endl;
 
-	std::cout << findLargestPrimeFactor(51) << std::endl;
 
 	return 0;
 }
