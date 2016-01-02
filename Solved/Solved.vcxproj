@@ -10,6 +10,15 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ProjectEuler\p1.cpp" />
+    <ClCompile Include="..\ProjectEuler\p2_main.cpp" />
+    <ClCompile Include="..\ProjectEuler\p3_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ProjectEuler\p2_header.h" />
+    <ClInclude Include="..\ProjectEuler\p3_header.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7791E0F8-271C-40E2-9528-2ECACC3672C7}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -77,15 +86,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\ProjectEuler\p1.cpp" />
-    <ClCompile Include="..\ProjectEuler\p2_main.cpp" />
-    <ClCompile Include="..\ProjectEuler\p3_main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\ProjectEuler\p2_header.h" />
-    <ClInclude Include="..\ProjectEuler\p3_header.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
