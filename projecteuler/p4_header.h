@@ -6,19 +6,6 @@
 #include <cmath>
 #include <vector>
 
-// 
-class PalindromeGenerator
-{
-private:
-	int digits;
-	std::vector<int> digit;a1234
-
-
-public:
-	int getSmaller();
-	void set(int _newVal);
-};
-
 // check _num if it consists of two factor
 //both of which are _digits digits.
 bool checkNumber(int _num, int _digits);			
