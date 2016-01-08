@@ -18,12 +18,15 @@
     <ClCompile Include="..\ProjectEuler\p4_main.cpp" />
     <ClCompile Include="..\ProjectEuler\p5_header.cpp" />
     <ClCompile Include="..\ProjectEuler\p5_main.cpp" />
+    <ClCompile Include="..\ProjectEuler\p6_header.cpp" />
+    <ClCompile Include="..\ProjectEuler\p6_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ProjectEuler\p2_header.h" />
     <ClInclude Include="..\ProjectEuler\p3_header.h" />
     <ClInclude Include="..\ProjectEuler\p4_header.h" />
     <ClInclude Include="..\ProjectEuler\p5_header.h" />
+    <ClInclude Include="..\ProjectEuler\p6_header.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7791E0F8-271C-40E2-9528-2ECACC3672C7}</ProjectGuid>
