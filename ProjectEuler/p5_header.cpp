@@ -1,12 +1,6 @@
 
 #include "p5_header.h"
 
-//template<class T1, class T2>
-void printPair(std::pair<int, int> elem)
-{
-	std::cout << "(" << elem.first << ", " << elem.second << ") ";
-}
-
 std::vector<std::pair<int, int>> factorization(int _number)
 {
 	std::vector<std::pair<int, int>> factList;
@@ -41,7 +35,7 @@ int getNumber(int _number)
 	
 	int i = 1;
 	
-	while (i < _number)
+	while (i <= _number)
 	{
 		std::vector<std::pair<int, int>> tmpNum = factorization(i);
 		auto tmpIt = tmpNum.cbegin();
@@ -57,7 +51,7 @@ int getNumber(int _number)
 				rtnIt++;
 			}
 			else if (tmpIt->first < rtnIt->first) {
-				rtnNum.insert(rtnIt, *tmpIt);
+				rtnNum.insert(rtnIt, *tmpIt);		//? std::insert() 가 아니라 std::list의 insert() 멤버함수 사용.. 가능? 가능
 				tmpIt++;
 			}
 			else {
@@ -73,14 +67,8 @@ int getNumber(int _number)
 		i++;
 	}
 
-	//dbg
-	std::for_each(rtnNum.begin(), rtnNum.end(), [](std::vector<std::pair<int, int>>::iterator& it) {
-		std::cout << "(" <<  it->first << ", " << it->second << ") ";
-	}
-	);
-
 	int rtnVal = 1;
-	//for (auto it = rtnNum.cbegin(), it != rtnNum.cend(); it++)
+
 	for (auto it : rtnNum) 
 	{
 		rtnVal *= std::pow(it.first, it.second);
