@@ -30,6 +30,12 @@
     <ClCompile Include="..\ProjectEuler\p3_main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="..\ProjectEuler\p5_main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ProjectEuler\p5_header.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ProjectEuler\p2_header.h">
@@ -39,6 +45,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="..\ProjectEuler\p3_header.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ProjectEuler\p5_header.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
