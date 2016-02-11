@@ -1,14 +1,5 @@
 #include "p8_header.h"
 
-int NumberSeries::getProduct(std::vector<int>::const_iterator & cit, int numOfReading)
-{
-	int rtnVal = 1;
-	//rev
-
-
-	return 0;
-}
-
 NumberSeries::NumberSeries()
 {
 }
@@ -43,7 +34,7 @@ void NumberSeries::readFile(const std::string & _fileName)
 		if (i > imax || i < imin)
 			std::cout << "Wrong i value input" << std::endl;
 		else
-			arr.push_back(i - static_cast<int>('0'));
+			arr.push_back(i - imin);
 	}
 	
 	fstrm.close();
