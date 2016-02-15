@@ -9,21 +9,26 @@ class NumberSeries
 {
 private:
 	std::vector<int> arr;
-	std::vector<int>::const_iterator curIt;		//rev
-	int maxProduct;		//rev
-	int curProduct;		//rev
+	std::vector<int>::const_iterator cWRevItPos;	// window의 마지막 element 위치
 	int windowSize;
+	int curProduct;
+	int maxProduct;	
 
-	bool slide(int _offset);		//rev
+	void readFile(const std::string& _fileName);
+	bool objErrorTest();	// return false if it failed test  //rev
+	bool outOfRangeWindowTest(std::vector<int>::const_iterator _startIt, int _offset)	// offset이 vector::end()에 도달하면 false return	//rev
+	{
+		return false;
+	}		// return false if it failed test	//rev
+	bool slide(int _steps);		//rev
 public:
 	NumberSeries();
-	NumberSeries(int _sizeOfSeries);
+	NumberSeries(const char * _fileName, int _sizeOfSeries, int _offset);
 	~NumberSeries();
 	// accessor
 	std::vector<int>& get_arr();
 	// mutator
 
-	void readFile(const std::string& _fileName);
 	int getMaxProduct(int _numOfReading);	//rev
 	
 };

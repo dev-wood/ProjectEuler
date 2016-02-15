@@ -1,23 +1,5 @@
 #include "p8_header.h"
 
-NumberSeries::NumberSeries()
-{
-}
-
-NumberSeries::NumberSeries(int _arrSize)
-{
-	arr.reserve(_arrSize);
-}
-
-NumberSeries::~NumberSeries()
-{
-}
-
-std::vector<int>& NumberSeries::get_arr()
-{
-	return arr;
-}
-
 void NumberSeries::readFile(const std::string & _fileName)
 {
 	std::fstream fstrm;
@@ -36,6 +18,46 @@ void NumberSeries::readFile(const std::string & _fileName)
 		else
 			arr.push_back(i - imin);
 	}
-	
+
 	fstrm.close();
+}
+
+NumberSeries::NumberSeries() : maxProduct(0), curProduct(0), windowSize(0)
+{
+	cWRevItPos = arr.cbegin();
+}
+
+// 
+NumberSeries::NumberSeries(const char * _fileName, int _sizeOfSeries, int _offset) : windowSize(_offset)
+{
+	arr.reserve(_sizeOfSeries);
+	readFile(_fileName);
+	cWRevItPos = arr.cbegin();	//rev 
+
+	if (!objErrorTest()) {
+		std::cout << "Object creation failed." << std::endl;
+		exit(1);
+	}
+
+	if (outOfRangeWindowTest(cItPos, windowSize))	//rev
+	{
+		curProduct = 1;
+		for (auto it = cItPos; cItPos < cItPos + windowSize; it++)
+			curProduct *= *it;
+		maxProduct = curProduct;
+	}
+	else
+	{
+		std::cout << ""
+	}
+
+}
+
+NumberSeries::~NumberSeries()
+{
+}
+
+std::vector<int>& NumberSeries::get_arr()
+{
+	return arr;
 }
