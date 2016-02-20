@@ -9,22 +9,22 @@ class NumberSeries
 {
 private:
 	std::vector<int> arr;
-	std::vector<int>::const_iterator curIt;		//rev
+	std::vector<int>::const_iterator inWndLastIt;		//rev
 	int maxProduct;		//rev
 	int curProduct;		//rev
-	int windowSize;
+	int wnSize;
 
 	bool slide(int _offset);		//rev
 public:
 	NumberSeries();
-	NumberSeries(int _sizeOfSeries);
+	NumberSeries(const std::string& _fileName, int _szSeries, int _szWnd);
 	~NumberSeries();
 	// accessor
 	std::vector<int>& get_arr();
 	// mutator
 
-	void readFile(const std::string& _fileName);
-	int getMaxProduct(int _numOfReading);	//rev
+	void readFile(const std::string& _fileName, int _szSeries);
+	int getMaxProduct();	//rev
 	
 };
 
