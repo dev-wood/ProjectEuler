@@ -22,9 +22,20 @@ void NumberSeries::readFile(const std::string & _fileName)
 	fstrm.close();
 }
 
+bool NumberSeries::slide(int _steps)
+{
+	for (int i = 0; i < _steps; i++) {
+		cWndRevIt++;
+		if (cWndRevIt == arr.cend())
+			return false;
+	}
+
+	return true;
+}
+
 NumberSeries::NumberSeries() : maxProduct(0), curProduct(0), windowSize(0)
 {
-	cWRevItPos = arr.cbegin();
+	cWndRevIt = arr.cbegin();
 }
 
 // 
@@ -32,25 +43,25 @@ NumberSeries::NumberSeries(const char * _fileName, int _sizeOfSeries, int _offse
 {
 	arr.reserve(_sizeOfSeries);
 	readFile(_fileName);
-	cWRevItPos = arr.cbegin();	//rev 
 
-	if (!objErrorTest()) {
-		std::cout << "Object creation failed." << std::endl;
+	if (arr.size() < windowSize)
+	{
+		std::cout << "Size of number series is smaller than window size. Object creation failed." << std::endl;
 		exit(1);
 	}
+	
+	// pose cWndRevIt
+	cWndRevIt = arr.cbegin() + (windowSize - 1);
 
-	if (outOfRangeWindowTest(cItPos, windowSize))	//rev
-	{
-		curProduct = 1;
-		for (auto it = cItPos; cItPos < cItPos + windowSize; it++)
-			curProduct *= *it;
-		maxProduct = curProduct;
+	// set curProduct & maxProduct
+	curProduct = 1;
+	auto it = arr.cbegin();
+	while (it != cWndRevIt) {
+		curProduct *= *it;
+		it++;
 	}
-	else
-	{
-		std::cout << ""
-	}
-
+	curProduct *= *it;
+	maxProduct = curProduct;
 }
 
 NumberSeries::~NumberSeries()
@@ -60,4 +71,41 @@ NumberSeries::~NumberSeries()
 std::vector<int>& NumberSeries::get_arr()
 {
 	return arr;
+}
+
+int NumberSeries::getMaxProduct()
+{
+	// slide window
+	while (slide(1) != false)
+	{
+		// get current product value
+		if (curProduct == 0)
+		{
+			auto it = cWndRevIt - windowSize;
+			if ((*it) == 0) {
+				curProduct = 1;
+				while (it++ != cWndRevIt) {
+					curProduct *= (*it);
+				}
+			}
+		}
+		else
+		{
+			auto it = cWndRevIt - windowSize;
+			curProduct = curProduct / (*it) * (*cWndRevIt);
+		}
+
+		if (maxProduct < curProduct) {
+			maxProduct = curProduct;
+
+			auto it = cWndRevIt - windowSize + 1;
+			while (it != cWndRevIt) {
+				std::cout << *it << " * ";
+				it++;
+			}
+			std::cout << *it << std::endl;
+		}
+	}
+
+	return maxProduct;
 }
