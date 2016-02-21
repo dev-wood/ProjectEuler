@@ -1,32 +1,6 @@
 #include "p8_header.h"
 
-NumberSeries::NumberSeries(const std::string & _fileName, int _szSeries, int _szWnd)
-{
-	readFile(_fileName, _szSeries);
-	
-	inWndLastIt = arr.cbegin();
-
-	if (_szSeries < _szWnd) {
-		std::cout << "Size of window is larger than size of series. Program terminated." << std::endl;
-		exit(1);
-	}
-
-	inWndLastIt += _szWnd;		//rev 확인할 것.
-
-	//rev 계속 작성..
-
-}
-
-NumberSeries::~NumberSeries()
-{
-}
-
-std::vector<int>& NumberSeries::get_arr()
-{
-	return arr;
-}
-
-void NumberSeries::readFile(const std::string & _fileName, int _szSeries)
+void NumberSeries::readFile(const std::string & _fileName)
 {
 	std::fstream fstrm;
 	fstrm.open(_fileName, std::fstream::in);
@@ -46,6 +20,94 @@ void NumberSeries::readFile(const std::string & _fileName, int _szSeries)
 		else
 			arr.push_back(i - imin);
 	}
-	
+
 	fstrm.close();
+}
+
+bool NumberSeries::slide(int _steps)
+{
+	for (int i = 0; i < _steps; i++) {
+		cWndRevIt++;
+		if (cWndRevIt == arr.cend())
+			return false;
+	}
+
+	return true;
+}
+
+NumberSeries::NumberSeries() : maxProduct(0), curProduct(0), windowSize(0)
+{
+	cWndRevIt = arr.cbegin();
+}
+
+// 
+NumberSeries::NumberSeries(const char * _fileName, int _sizeOfSeries, int _offset) : windowSize(_offset)
+{
+	arr.reserve(_sizeOfSeries);
+	readFile(_fileName);
+
+	if (arr.size() < windowSize)
+	{
+		std::cout << "Size of number series is smaller than window size. Object creation failed." << std::endl;
+		exit(1);
+	}
+	
+	// pose cWndRevIt
+	cWndRevIt = arr.cbegin() + (windowSize - 1);
+
+	// set curProduct & maxProduct
+	curProduct = 1;
+	auto it = arr.cbegin();
+	while (it != cWndRevIt) {
+		curProduct *= *it;
+		it++;
+	}
+	curProduct *= *it;
+	maxProduct = curProduct;
+}
+
+NumberSeries::~NumberSeries()
+{
+}
+
+std::vector<int>& NumberSeries::get_arr()
+{
+	return arr;
+}
+
+int NumberSeries::getMaxProduct()
+{
+	// slide window
+	while (slide(1) != false)
+	{
+		// get current product value
+		if (curProduct == 0)
+		{
+			auto it = cWndRevIt - windowSize;
+			if ((*it) == 0) {
+				curProduct = 1;
+				while (it++ != cWndRevIt) {
+					curProduct *= (*it);
+				}
+			}
+		}
+		else
+		{
+			auto it = cWndRevIt - windowSize;
+			curProduct = curProduct / (*it) * (*cWndRevIt);
+		}
+
+		if (maxProduct < curProduct) {
+			maxProduct = curProduct;
+
+			auto it = cWndRevIt - windowSize + 1;
+			while (it != cWndRevIt) {
+				std::cout << *it << " * ";
+				it++;
+			}
+			std::cout << *it << std::endl;
+		}
+	}
+
+	return maxProduct;
 }

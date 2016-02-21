@@ -9,22 +9,23 @@ class NumberSeries
 {
 private:
 	std::vector<int> arr;
-	std::vector<int>::const_iterator inWndLastIt;		//rev
-	int maxProduct;		//rev
-	int curProduct;		//rev
-	int wnSize;
 
-	bool slide(int _offset);		//rev
+	std::vector<int>::const_iterator cWndRevIt;	// window에 포함된 elem 중 last element 위치
+	int windowSize;
+	int curProduct;
+	int maxProduct;	
+
+	void readFile(const std::string& _fileName);
+	bool slide(int _steps);		// window를 _steps 만큼 슬라이드 시킴. 성공 시 true, 슬라이드 중 end() 만나면 false 반환.
 public:
 	NumberSeries();
-	NumberSeries(const std::string& _fileName, int _szSeries, int _szWnd);
+	NumberSeries(const char * _fileName, int _sizeOfSeries, int _offset);
 	~NumberSeries();
 	// accessor
 	std::vector<int>& get_arr();
 	// mutator
 
-	void readFile(const std::string& _fileName, int _szSeries);
-	int getMaxProduct();	//rev
+	int getMaxProduct();
 	
 };
 
