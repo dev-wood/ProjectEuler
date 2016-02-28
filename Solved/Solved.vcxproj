@@ -22,6 +22,8 @@
     <ClCompile Include="..\ProjectEuler\p6_main.cpp" />
     <ClCompile Include="..\ProjectEuler\p7_header.cpp" />
     <ClCompile Include="..\ProjectEuler\p7_main.cpp" />
+    <ClCompile Include="..\ProjectEuler\p8_header.cpp" />
+    <ClCompile Include="..\ProjectEuler\p8_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ProjectEuler\p2_header.h" />
