@@ -42,16 +42,22 @@
     <ClCompile Include="..\ProjectEuler\p6_header.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\ProjectEuler\p7_header.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\ProjectEuler\p7_main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="..\ProjectEuler\p8_main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="..\ProjectEuler\p8_header.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ProjectEuler\p9_header.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ProjectEuler\p9_main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ProjectEuler\p7_header.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ProjectEuler\p7_main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -70,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="..\ProjectEuler\p6_header.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ProjectEuler\p8_header.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
     <ClInclude Include="..\ProjectEuler\p7_header.h">
       <Filter>헤더 파일</Filter>

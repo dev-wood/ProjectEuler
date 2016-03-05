@@ -24,6 +24,8 @@
     <ClCompile Include="..\ProjectEuler\p7_main.cpp" />
     <ClCompile Include="..\ProjectEuler\p8_header.cpp" />
     <ClCompile Include="..\ProjectEuler\p8_main.cpp" />
+    <ClCompile Include="..\ProjectEuler\p9_header.cpp" />
+    <ClCompile Include="..\ProjectEuler\p9_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ProjectEuler\p2_header.h" />
@@ -32,6 +34,7 @@
     <ClInclude Include="..\ProjectEuler\p5_header.h" />
     <ClInclude Include="..\ProjectEuler\p6_header.h" />
     <ClInclude Include="..\ProjectEuler\p7_header.h" />
+    <ClInclude Include="..\ProjectEuler\p8_header.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7791E0F8-271C-40E2-9528-2ECACC3672C7}</ProjectGuid>

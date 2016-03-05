@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="p8_header.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
+    <ClCompile Include="p10_header.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="p10_main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="p9_header.cpp">
+    <ClInclude Include="p10_header.h">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p9_main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
 </Project>
