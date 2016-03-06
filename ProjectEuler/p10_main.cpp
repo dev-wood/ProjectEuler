@@ -5,14 +5,16 @@ int main()
 	//Prime prime(100000);
 
 	//prime.print();
-	Prime prime;
+	//Prime prime;
 
-	std::cout << prime[10000] << std::endl;
-/*
+	//std::cout << prime[10000] << std::endl;
+
+	Prime prime(2000000);
+
 	int sum = 0;
 	for (auto it : prime)
 		sum += it;
-	std::cout << "sum: " << sum << std::endl;*/
+	std::cout << "sum: " << sum << std::endl;
 
 	return 0;
 }
