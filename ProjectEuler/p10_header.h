@@ -6,6 +6,9 @@
 #include <iostream>
 #include <vector>
 
+#define VEC_RESERVED_SPACE 200000
+#define CHECK_NUMBER 10000
+
 class Prime
 {
 private:

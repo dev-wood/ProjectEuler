@@ -19,6 +19,10 @@ int Prime::getNextPrimeInArr()
 	while (1)
 	{
 		tmpVal++;
+
+		if (tmpVal % CHECK_NUMBER == 0)
+			std::cout << "Progress now check at " << tmpVal << '.' << std::endl;
+
 		if (primeCheck(tmpVal))
 		{
 			return tmpVal;
@@ -56,13 +60,13 @@ void Prime::setPrimeArrLessThan(int _val)
 
 Prime::Prime()
 {
-	arr.reserve(100);
+	arr.reserve(VEC_RESERVED_SPACE);
 	arr.push_back(2);
 }
 
 Prime::Prime(int _lessThan)
 {
-	arr.reserve(100);
+	arr.reserve(VEC_RESERVED_SPACE);
 	arr.push_back(2);
 	//Prime();		// error. 한 생성자 내에서 default constructor를 불러서 초기화를 시키고 싶을 땐 어떻게..?
 
