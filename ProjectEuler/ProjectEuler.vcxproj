@@ -10,13 +10,6 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="p10_header.cpp" />
-    <ClCompile Include="p10_main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="p10_header.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4B35BC40-000A-4C80-9DA7-187FFAB28245}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

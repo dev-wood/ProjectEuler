@@ -2,13 +2,6 @@
 
 int main()
 {
-	//Prime prime(100000);
-
-	//prime.print();
-	//Prime prime;
-
-	//std::cout << prime[10000] << std::endl;
-
 	Prime prime(2000000);
 
 	int sum = 0;
