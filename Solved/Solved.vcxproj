@@ -14,6 +14,10 @@
     <ClCompile Include="..\ProjectEuler\p1.cpp" />
     <ClCompile Include="..\ProjectEuler\p10_header.cpp" />
     <ClCompile Include="..\ProjectEuler\p10_main.cpp" />
+    <ClCompile Include="..\ProjectEuler\p11_header.cpp" />
+    <ClCompile Include="..\ProjectEuler\p11_main.cpp" />
+    <ClCompile Include="..\ProjectEuler\p12_header.cpp" />
+    <ClCompile Include="..\ProjectEuler\p12_main.cpp" />
     <ClCompile Include="..\ProjectEuler\p2_main.cpp" />
     <ClCompile Include="..\ProjectEuler\p3_main.cpp" />
     <ClCompile Include="..\ProjectEuler\p4_header.cpp" />
@@ -31,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ProjectEuler\p10_header.h" />
+    <ClInclude Include="..\ProjectEuler\p11_header.h" />
+    <ClInclude Include="..\ProjectEuler\p12_header.h" />
     <ClInclude Include="..\ProjectEuler\p2_header.h" />
     <ClInclude Include="..\ProjectEuler\p3_header.h" />
     <ClInclude Include="..\ProjectEuler\p4_header.h" />
